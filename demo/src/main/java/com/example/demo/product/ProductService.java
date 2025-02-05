@@ -3,6 +3,8 @@ package com.example.demo.product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductService {
     private ProductRepository productRepository;
@@ -22,5 +24,9 @@ public class ProductService {
 
     public void saveProduct(Product product) {
         productRepository.save(product);
+    }
+
+    public List<Product> findProducts() {
+        return productRepository.findProducts();
     }
 }
